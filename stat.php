@@ -5,4 +5,3 @@
             <h1>ajja</h1>
 </section>
 <?php include("includes/footer.php"); ?>
-<?php include("includes/footer.php"); ?>
