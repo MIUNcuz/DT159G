@@ -1,4 +1,3 @@
-
 <?php include("includes/header.php"); ?>
 <section id="map">
             <!--här kommer kartan att visas-->
