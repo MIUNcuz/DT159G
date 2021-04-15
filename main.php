@@ -3,6 +3,5 @@
             <!--här kommer kartan att visas-->
 </section>
 <?php include("includes/footer.php"); ?>
-<?php include("includes/footer.php"); ?>
 
-<!--test--> 
+
