@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
-    <header id="mainheader">
+<header id="mainheader">
+    <div class="container">
         <h1>Startsida</h1>
-    </header>
-    <?php include("includes/mainmenu.php"); ?>
+    </div>
+</header>
+<?php include("includes/mainmenu.php");?>
     
