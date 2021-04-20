@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 
 $url1 = "http://api.scb.se/OV0104/v1/doris/sv/ssd/START/BO/BO0406/BO0406E/BO0406Tab01";
 $url3 = "http://api.scb.se/OV0104/v1/doris/sv/ssd/BO/BO0406/BO0406E/BO0406Tab01";
-$url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-af93-af42a11f2a44/json?_offset=24400&_limit=100";
+$url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-af93-af42a11f2a44/json?_offset=40000&_limit=100";
 
 
 	// Sökkoden som skickas med POST-anropet hämtas från en fil istället för att skrivas direkt här som i postExempel_1.php
@@ -19,57 +19,91 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 	$response_hyra2 = \Httpful\Request::get( $url3 )
 	->send();
 
-	var_dump($response_hyra);
+	//var_dump($response_hyra);
 	
 	// $resp_arr = json_decode($response_hyra);
 	// echo($resp_arr);
 
-	//$kronofogden = array();
+
+	
+	// Använder indata för att hämta nästa indata.
 	
 	
-	// while( $url2 != 'INGEN_URL' )
-	// {
-	// 	$respons = restAnrop( $url2 );
-	// 	$inData =  json_decode( $respons );
-	// 	//var_dump($inData);
-	// 	fyllArrayer($inData, $kronofogden);
+	$yearArr = array();
+	$skuldArr = array();
+	$ant_skuld = array();
+	$lanArr = array();	
+	
+	while( $url2 != 'INGEN_URL' )
+	{
+		$respons = restAnrop( $url2 );
+		$inData =  json_decode( $respons );
+		fyllArrayer($inData, $yearArr, $skuldArr, $ant_skuld, $lanArr);
 		
-	// 	// Om det finns en länk till nästa uppsättning indata, sätt url till den länken.
-	// 	// annars sätt url till "INGEN URL"
-	// 	if( property_exists($inData, 'next') )
-	// 		$url2 = $inData->next;
-	// 	else
-	// 		$url2 = 'INGEN_URL';
-	// }
-
-
-
+		// Om det finns en länk till nästa uppsättning indata, sätt url till den länken.
+		// annars sätt url till "INGEN URL"
+		if( property_exists($inData, 'next') )
+			$url2 = $inData->next;
+		else
+			$url2 = 'INGEN_URL';
+	}
 	
-	// function restAnrop( $url2 )
-	// {
-	// 	$resp = \Httpful\Request::get( $url2 )
-	// 	->send();
-		
-	// 	return $resp;
-	// }
+	$ut = SkapaJson($yearArr, $skuldArr, $ant_skuld, $lanArr,"bar");
 	
-	// function fyllArrayer( &$inData, &$kronofogden)
-	// {
-	// 	// Namnen på medlemsvariablerna i kommunerna
-	// 	//$reg="län";
-	// 	$an_skuld="antal skuldsatta";
-	// 	//$bel_skuld="skuldbelopp";
-	// 	//$year="år";
+	echo "{$ut}";
+	
+	
+	/////////////////////////////
+	// FUNKTIONER
+	/////////////////////////////
+	
+	// hämta data
+	function restAnrop( $url2 )
+	{
+		$resp = \Httpful\Request::get( $url2 )
+		->send();
 		
-    // 	foreach ( $inData->results as $län )
-	// 	{
+		return $resp;
+	}
+	
+	// & för referensargument
+	// https://www.php.net/manual/en/functions.arguments.php
+	function fyllArrayer( &$inData, &$yArr, &$sArr, &$aArr, &$lArr )
+	{
+		// Namnen på medlemsvariablerna i kommunerna
+		$year="år";
+		$antal_skuldsatta="antal skuldsatta";
+		$skuldbelopp="skuldbelopp";
+		$lan = "﻿län";
 
-	// 		//$kArr[] = $kommun->$reg;
-	// 		$kronofogden[] = $län->$an_skuld;
-	// 		//$kArr[] = $kommun->$bel_skuld;
-	// 		//$kArr[] = $kommun->$year;
+		
+    	foreach ( $inData->results as $län )
+		{
 
-	// 	}
-	// }
+			$yArr[] = $län->$year;
+			$sArr[] = $län->$skuldbelopp;
+			$aArr[] = $län->$antal_skuldsatta;
+			$lArr[] = $län->$lan;
+		}
+	}
+	
+	// Skapar Json utifrån arrayer
+	function SkapaJson( &$yArr, &$sArr, &$aArr, &$lArr, $typ )
+	{
+		// Fr.o.m. 2021 är de inte sorterade i bokstavsordning.
+		array_multisort($yArr, $sArr, $aArr, $lArr);
+
+		// Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
+		$data = [ [
+			"x" => $yArr,
+			"y" => $sArr,
+			"z" => $aArr,
+			"a" => $lArr,
+			"type" => $typ  
+		] ];
+		
+		$ut = json_encode( $data ); // Serialisera i json-format.
+		return $ut;
+	}
 
 ?>
