@@ -4,9 +4,11 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWxmcmVkayIsImEiOiJja20zamlzdjM0eTlzMm9uMWhsZ
 function setupMap() {
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
+        style: 'mapbox://styles/mapbox/navigation-day-v1',
         center:[17.28366, 62.39470],
-        zoom:4
+        zoom:4,
+        maxZoom:6,
+        minZoom:4
         })
         
         map.addControl(new mapboxgl.NavigationControl());
