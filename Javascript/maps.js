@@ -37,7 +37,7 @@ function setupMap() {
         .addTo(map);
         
         var marker = new mapboxgl.Marker()
-        .setLngLat([16.330, 58.680])
+        .setLngLat([16.330, 56.680])
         .setPopup(new mapboxgl.Popup().setHTML("<h3>Kalmar</h3>"))
         .addTo(map);
 
