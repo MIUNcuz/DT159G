@@ -32,10 +32,89 @@ function setupMap() {
         .addTo(map);
 
         var marker = new mapboxgl.Marker()
-        .setLngLat([14.367, 63.1706])
-        .setPopup(new mapboxgl.Popup().setHTML("<h3>Norrbotten</h3>"))
+        .setLngLat([12.970, 55.610])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Skåne</h3>"))
         .addTo(map);
-         
+        
+        var marker = new mapboxgl.Marker()
+        .setLngLat([16.330, 58.680])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Kalmar</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([15.600, 56.600])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Blekinge</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([12.830, 56.660])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Halland</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([14.830, 56.890])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Kronoberg</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([14.170, 57.780])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Jönköping</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([11.890, 57.690])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Västra Götaland</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([16.180, 58.610])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Östergötland</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([15.180, 59.280])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Örebro</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([13.480, 59.390])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Värmland</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([16.550, 59.370])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Södermanland</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([17.700, 59.870])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Uppsala</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([115.770, 60.000])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Västmanland</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([14.540, 61.000])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Dalarna</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([14.700, 63.180])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Jämtland</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([17.120, 60.660])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Gävleborg</h3>"))
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker()
+        .setLngLat([18.290, 57.640])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Gotland</h3>"))
+        .addTo(map);
 }
 
 setupMap();
