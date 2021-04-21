@@ -14,3 +14,4 @@ function loadDoc() {
     xhttp.open("GET", "getStats.php", true);
     xhttp.send();
 }
+

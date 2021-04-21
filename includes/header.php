@@ -1,3 +1,6 @@
+<?php
+include("includes/config.php");
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -9,7 +12,7 @@
 <body>
 <header id="mainheader">
     <div class="container">
-        <h1>Startsida</h1>
+        <h1>Hyra & Skuld</h1>
     </div>
 </header>
 <?php include("includes/mainmenu.php");?>

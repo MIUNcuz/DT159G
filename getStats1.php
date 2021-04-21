@@ -84,15 +84,14 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 			$sArr[] = $län->$skuldbelopp;
 			$aArr[] = $län->$antal_skuldsatta;
 			$lArr[] = $län->$lan;
+			array_push($lArr, $län->$year, $län->$skuldbelopp, $län->$antal_skuldsatta, $län);
 		}
 	}
-	
 	// Skapar Json utifrån arrayer
 	function SkapaJson( &$yArr, &$sArr, &$aArr, &$lArr, $typ )
 	{
 		// Fr.o.m. 2021 är de inte sorterade i bokstavsordning.
-		array_multisort($yArr, $sArr, $aArr, $lArr);
-
+		//array_multisort($yArr, $sArr, $aArr, $lArr);
 		// Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
 		$data = [ [
 			"x" => $yArr,

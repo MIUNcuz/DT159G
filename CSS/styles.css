@@ -57,4 +57,11 @@ body
     color: #fff;
     background: #333;
     text-align: center;
+    min-height: 50px;
+}
+
+#map{
+    min-height: 800px;
+    height: 100%;
+    width: 100%;
 }
