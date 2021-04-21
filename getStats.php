@@ -1,6 +1,7 @@
 <?php
+header('Content-Type: application/json');
 	// Länk till nedladdade REST-biblioteket. Detta ligger i mappen biblo i överordnad katalog.
-	include('../httpful.phar');
+	include('biblo/httpful.phar');
 
 $url1 = "http://api.scb.se/OV0104/v1/doris/sv/ssd/START/BO/BO0406/BO0406E/BO0406Tab01";
 $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-af93-af42a11f2a44/json";
@@ -23,7 +24,7 @@ $url3 = "http://api.scb.se/OV0104/v1/doris/sv/ssd/BO/BO0406/BO0406E/BO0406Tab01"
     
 	//echo $response_hyra;
 	//echo $response_skuld;
-	echo $response_hyra2;
+	echo $response_hyra;
     //echo $postKod;
     //console.log($postKod);
 ?>
