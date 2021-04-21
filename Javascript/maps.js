@@ -92,7 +92,7 @@ function setupMap() {
         .addTo(map);
 
         var marker = new mapboxgl.Marker()
-        .setLngLat([115.770, 60.000])
+        .setLngLat([15.770, 60.000])
         .setPopup(new mapboxgl.Popup().setHTML("<h3>Västmanland</h3>"))
         .addTo(map);
 
