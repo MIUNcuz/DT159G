@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 
 $url1 = "http://api.scb.se/OV0104/v1/doris/sv/ssd/START/BO/BO0406/BO0406E/BO0406Tab01";
 $url3 = "http://api.scb.se/OV0104/v1/doris/sv/ssd/BO/BO0406/BO0406E/BO0406Tab01";
-$url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-af93-af42a11f2a44/json?_offset=40000&_limit=100";
+$url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-af93-af42a11f2a44/json?_offset=30000&_limit=100";
 
 
 	// Sökkoden som skickas med POST-anropet hämtas från en fil istället för att skrivas direkt här som i postExempel_1.php
@@ -66,6 +66,15 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 		return $resp;
 	}
 	
+	function findYearAndLan($yArr, $lArr, $year, $lan){
+		for( $i=0; $i<count($yArr); $i++ ){
+			if($yArr[$i] == $year and $lArr[$i] == $lan){
+				return $i;
+			}
+		}
+		return -1;
+	}
+
 	// & för referensargument
 	// https://www.php.net/manual/en/functions.arguments.php
 	function fyllArrayer( &$inData, &$yArr, &$sArr, &$aArr, &$lArr )
@@ -79,13 +88,34 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 		
     	foreach ( $inData->results as $län )
 		{
+			$index = findYearAndLan($yArr, $lArr, $län->$year, $län->$lan);
+			if($index == -1){
+				array_push($lArr, $län->$lan);
+				array_push($yArr, $län->$year);
+				array_push($sArr, $län->$skuldbelopp);
+				array_push($aArr, $län->$antal_skuldsatta);
+			}
 
-			$yArr[] = $län->$year;
-			$sArr[] = $län->$skuldbelopp;
-			$aArr[] = $län->$antal_skuldsatta;
-			$lArr[] = $län->$lan;
-			array_push($lArr, $län->$year, $län->$skuldbelopp, $län->$antal_skuldsatta, $län);
+			else{
+				$sArr[$index] += $län->$skuldbelopp;
+				$aArr[$index] += $län->$antal_skuldsatta;
+			}
+
+
+			// $yArr[] = $län->$year;
+			// $sArr[] = $län->$skuldbelopp;
+			// $aArr[] = $län->$antal_skuldsatta;
+			// $lArr[] = $län->$lan;
+			// array_push($lArr, $län->$year, $län->$skuldbelopp, $län->$antal_skuldsatta, $län);
 		}
+	}
+
+	function getMean($sArr, $aArr){
+		$meanArr = array_fill(0, count($sArr), 0);
+		for($i=0; $i<count($meanArr); $i++){
+			$meanArr[$i] = $sArr[$i] / $aArr[$i];
+		}
+		return $meanArr;
 	}
 	// Skapar Json utifrån arrayer
 	function SkapaJson( &$yArr, &$sArr, &$aArr, &$lArr, $typ )
@@ -95,7 +125,7 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 		// Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
 		$data = [ [
 			"x" => $yArr,
-			"y" => $sArr,
+			"y" => getMean($sArr, $aArr),
 			"z" => $aArr,
 			"a" => $lArr,
 			"type" => $typ  
