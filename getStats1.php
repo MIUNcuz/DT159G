@@ -124,10 +124,10 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 		//array_multisort($yArr, $sArr, $aArr, $lArr);
 		// Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
 		$data = [ [
-			"x" => $yArr,
-			"y" => getMean($sArr, $aArr),
-			"z" => $aArr,
-			"a" => $lArr,
+			"År" => $yArr,
+			"Skuldbelopp/Antal skuldsatta" => getMean($sArr, $aArr),
+			"Antal skuldsatta" => $aArr,
+			"Län" => $lArr,
 			"type" => $typ  
 		] ];
 		
