@@ -65,3 +65,26 @@ body
     height: 100%;
     width: 100%;
 }
+
+#leftStat{
+    width: 50%; 
+    height: auto;
+    float: left;
+}
+
+#rightStat{
+    width: 50%; 
+    height: auto;
+    float: right;
+}
+
+#navMenu
+{
+    background: #ccc;
+    color: black;
+    text-align: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: auto;
+}

@@ -8,6 +8,7 @@ include("includes/config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $site_title . $divider . $page_title; ?></title>
     <link rel="stylesheet" href="./CSS/styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
 <header id="mainheader">
