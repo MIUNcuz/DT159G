@@ -23,9 +23,14 @@ header('Content-Type: application/json');
 	$hy_medelArr =array();
 	$hy_regArr =array();
 
+	$hyra_lan = array();
+	
+
 	$dataIn = json_decode($response_hyra, true);
 
 	$category = $dataIn["dataset"]["dimension"]["Region"]["category"];
+	$year = $dataIn["dataset"]["dimension"]["Tid"]["category"]["label"];
+	//var_dump($year);
 
 	$index = $category["index"];
 	//var_dump($index);
@@ -35,15 +40,28 @@ header('Content-Type: application/json');
 	$values = $dataIn["dataset"]["value"];
 
 	foreach($label as $key => $value){
-		echo($value);
-		echo"<br>";
 		$start = $index["$key"];
 		$start = 5*$start;
 		for($i = 0; $i < 5; $i++){
-			echo($values[$start+$i]);
-			echo"<br>";
+			array_push($hy_medelArr, $values[$start+$i]);
+		}
+		array_push($hy_regArr, $value);
+	}
+
+	foreach($year as $key => $value){
+		array_push($hy_yearArr, $year["$key"]);
+	}
+	$j = 0;
+	foreach($hy_regArr as $key => $reg_arrs){
+		for($i = 0; $i < 5; $i++){
+			$plot_hyra[$reg_arrs][] = $hy_medelArr[$j];
+			$j++;
 		}
 	}
+var_dump($plot_hyra);
+
+	//var_dump($hy_yearArr);
+	//var_dump($hyra_lan);
 
 	//var_dump($values);
 

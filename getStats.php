@@ -16,7 +16,7 @@ header('Content-Type: application/json');
 
 	
 	//var_dump($test);
-	//echo ($response_hyra);
+	echo ($response_hyra);
 
 	
 	$hy_yearArr =array();
@@ -25,7 +25,7 @@ header('Content-Type: application/json');
 
 	$dataIn = json_decode($response_hyra);
 
-	var_dump($dataIn->dataset->dimension->Region);
+	//var_dump($dataIn->dataset->dimension->Region);
 	//fyllArrayer1($dataIn, $hy_yearArr, $hy_medelArr, $hy_regArr);
 
 	//$ut = SkapaJson($hy_yearArr, $hy_medelArr, $hy_regArr,"bar");

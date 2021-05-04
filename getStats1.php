@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 	include('biblo/httpful.phar');
 
 $url1 = "http://api.scb.se/OV0104/v1/doris/sv/ssd/START/BO/BO0406/BO0406E/BO0406Tab01";
-$url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-af93-af42a11f2a44/json?_offset=42000&_limit=100";
+$url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-af93-af42a11f2a44/json?_offset=20370&_limit=100";
 
 
 	// Sökkoden som skickas med POST-anropet hämtas från en fil istället för att skrivas direkt här som i postExempel_1.php
@@ -17,7 +17,7 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 	
 	$test = json_decode($response_hyra);
 	//var_dump($test);
-	echo ($response_hyra);
+	//echo ($response_hyra);
 	$hy_yearArr =array();
 	$hy_medelArr =array();
 	$hy_lanArr =array();
@@ -49,7 +49,7 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 	
 	$ut = SkapaJson($yearArr, $skuldArr, $ant_skuld, $lanArr,"bar");
 	
-	//echo "{$ut}";
+	echo "{$ut}";
 	
 	
 	/////////////////////////////
