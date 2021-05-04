@@ -30,10 +30,10 @@ header('Content-Type: application/json');
 
 	$category = $dataIn["dataset"]["dimension"]["Region"]["category"];
 	$year = $dataIn["dataset"]["dimension"]["Tid"]["category"]["label"];
-	//var_dump($year);
+
 
 	$index = $category["index"];
-	//var_dump($index);
+
 
 	$label = $category["label"];
 
@@ -58,21 +58,15 @@ header('Content-Type: application/json');
 			$j++;
 		}
 	}
-var_dump($plot_hyra);
-
-	//var_dump($hy_yearArr);
-	//var_dump($hyra_lan);
-
-	//var_dump($values);
-
-	//fyllArrayer1($dataIn, $hy_yearArr, $hy_medelArr, $hy_regArr);
-
-	//$ut = SkapaJson($hy_regArr,"bar");
-
-	//echo "{$ut}";
+//var_dump($plot_hyra);
 
 
-    //$hy_yearArr, $hy_medelArr, 
+
+	$ut = SkapaJson($plot_hyra, $hy_yearArr,"bar");
+
+	echo "{$ut}";
+
+
 
 
 
@@ -83,50 +77,20 @@ var_dump($plot_hyra);
 	///////////////////////////////////////
 	// FUNTIONER
 	//////////////////////////////////////
-	//function findYearAndReg($yArr, $rArr, $year, $reg){
-	//	for( $i=0; $i<count($yArr); $i++ ){
-	//		if($yArr[$i] == $year and $rArr[$i] == $reg){
-	//			return $i;
-	//		}
-	//	}
-	//	return -1;
-	//}
 
 
 
-	// function fyllArrayer1 (&$dataIn, &$yArr, &$rArr, &$mArr)
-	// {
-	// 	$year="år";
-	// 	$reg="region";
-	// 	$medelhyra="Ah_kvm";
+	function SkapaJson( &$plot_hyra, &$hy_yearArr, $typ )
+	{
 
-	// 	foreach ($dataIn->dataset->dimension->Region as $region)
-	// 	{
-			//$index = findYearAndReg($yArr, $rArr, $region->$year, $region->$reg);
-			//if($index == -1){
-				//array_push($rArr, $region->$reg);
-			//	array_push($yArr, $region->$year);
-			//	array_push($mArr, $region->$medelhyra);
-			//}
-			//else{
-			//	$mArr[$index] += $region->$medelhyra;
-			//}
-
-		//}
-	//}
-	// function SkapaJson( &$rArr, &$yArr, &$mArr, $typ )
-	// {
-		// Fr.o.m. 2021 är de inte sorterade i bokstavsordning.
-		//array_multisort($yArr, $sArr, $aArr, $lArr);
-		// Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
-		//$data = [ [
-			//"År" => $yArr,
-			//"medelhyra" => $mArr,
-			//"region" => $rArr,
-			//"type" => $typ  
-		//] ];
+		//Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
+		$data = [ [
+			"x" => $hy_yearArr,
+			"y" => $plot_hyra,
+			"type" => $typ  
+		] ];
 		
-		//$ut = json_encode( $data ); // Serialisera i json-format.
-		//return $ut;
-	//}
+		$ut = json_encode( $data ); // Serialisera i json-format.
+		return $ut;
+	}
 ?>

@@ -6,12 +6,17 @@ function loadDoc() {
         if (this.readyState == 4 && this.status == 200)
         {
             var data = JSON.parse(this.responseText);
-            Plotly.newPlot('graf', data );
-            console.log(data);
+
+            document.getElementById("rightStat").innerHTML = "<p>"+data+"</p>";
+            //var lan = data["y"];
+            
+            
+            //Plotly.newPlot('graf', data );
+            //console.log(data);
         }
     };
 
-    xhttp.open("GET", "getStats1.php", true);
+    xhttp.open("GET", "getSbeta.php", true);
     xhttp.send();
 }
 
