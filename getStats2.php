@@ -23,13 +23,12 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
             else
                 $url2 = 'INGEN_URL';
 		}
-		file_put_contents("txtFile.txt", $inData);
 	
 	$ut = SkapaJson($yearArr, $skuldArr, $ant_skuld, $lanArr,"bar");
     $test = putMultiArray($lanArr, getMean($skuldArr, $ant_skuld));
     //var_dump($test);
 	//echo "{$ut}";
-	
+	file_put_contents("txtFile.txt", $ut);
 	/////////////////////////////
 	// FUNKTIONER
 	/////////////////////////////
