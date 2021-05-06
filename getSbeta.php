@@ -62,7 +62,7 @@ header('Content-Type: application/json');
 
 
 
-	$ut = SkapaJson($plot_hyra, $hy_yearArr,"bar");
+	$ut = SkapaJson($plot_hyra, $hy_yearArr, $hy_regArr,"bar");
 
 	echo "{$ut}";
 
@@ -80,13 +80,14 @@ header('Content-Type: application/json');
 
 
 
-	function SkapaJson( &$plot_hyra, &$hy_yearArr, $typ )
+	function SkapaJson( &$plot_hyra, &$hy_yearArr, &$hy_regArr, $typ )
 	{
 
 		//Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
 		$data = [ [
 			"x" => $hy_yearArr,
 			"y" => $plot_hyra,
+			"z" => $hy_regArr,
 			"type" => $typ  
 		] ];
 		
