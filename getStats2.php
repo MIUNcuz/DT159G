@@ -22,7 +22,8 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
                 $url2 = $inData->next;
             else
                 $url2 = 'INGEN_URL';
-        }
+		}
+		file_put_contents("txtFile.txt", $inData);
 	
 	$ut = SkapaJson($yearArr, $skuldArr, $ant_skuld, $lanArr,"bar");
     $test = putMultiArray($lanArr, getMean($skuldArr, $ant_skuld));
@@ -88,14 +89,18 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 	}
 
     function putMultiArray($lArr,$meanArr){
-        $j=0;
-        foreach($lArr as $key => $value){
-			for($i = 0; $i < 21; $i++){
-                $plot_skuld[$value][] = $meanArr[$j];
-                $j++;
-			}
-        }
-        return $plot_skuld;
+		$reg = array_unique($lArr);
+		//var_dump($reg);
+		//var_dump($meanArr);
+		// $j=0;
+        // foreach($reg as $key){
+		// 	for($i = 4; $i < count($meanArr); $i+22){
+				
+        //         $plot_skuld[$key][] = $meanArr[$i];
+		// 	}
+        // }
+		// return $plot_skuld;
+		//var_dump($plot_skuld);
     }
 
 
