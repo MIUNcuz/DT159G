@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function(){
                     document.getElementById("centrum").innerHTML = "<h1>"+reg+"</h1>";
                     var x_stat = data[0].x;
                     var y_stat = data[0].y[reg];
-                    console.log(x_stat);
                     var dat = [
                         {
                           x: x_stat,
@@ -68,14 +67,12 @@ document.addEventListener("DOMContentLoaded", function(){
         var reg = document.getElementById("regVal").value;
         reg = reg.toUpperCase();
         var xmlhttp = new XMLHttpRequest();   
-        console.log(reg);
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == XMLHttpRequest.DONE ) { // Förfrågan klar
                 if (xmlhttp.status == 200) {  // Alles OK, => 200 "vi fortsätter"
                     var data = JSON.parse( xmlhttp.responseText );
                     var x_stat = data[0].x;
                     var y_stat = data[0].y[reg];
-                    console.log(x_stat);
                     var dat = [
                         {
                           x: x_stat,

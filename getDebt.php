@@ -2,13 +2,13 @@
 header('Content-Type: application/json');
 
 // at a later point, you can convert it back to array like &  unserializing to get actual array:
-$recoveredYear = file_get_contents('year.txt');
+$recoveredYear = file_get_contents('../writeable/year.txt');
 $yearArr = unserialize($recoveredYear);
-$recoveredSkuld = file_get_contents('skuld.txt');
+$recoveredSkuld = file_get_contents('../writeable/skuld.txt');
 $skuldArr = unserialize($recoveredSkuld);
-$recoveredAntSkuld = file_get_contents('ant_skuld.txt');
+$recoveredAntSkuld = file_get_contents('../writeable/ant_skuld.txt');
 $ant_skuld = unserialize($recoveredAntSkuld);
-$recoveredLan = file_get_contents('lan.txt');
+$recoveredLan = file_get_contents('../writeable/lan.txt');
 $lanArr = unserialize($recoveredLan);
 
 $objYear = array_unique($yearArr);
@@ -16,13 +16,17 @@ unset($objYear[0]);
 
 $ArrYear = (array) $objYear;
 $ArrYear = array_values($ArrYear);
-//var_dump($ArrYear);
 
 $plot_skuld = putMultiArray($lanArr, getMean($skuldArr, $ant_skuld));
 
-$ut = SkapaJson($plot_skuld, $ArrYear, "bar");
+$ut_debt = SkapaJson1($plot_skuld, $ArrYear, "bar");
 
-echo "{$ut}";
+echo "{$ut_debt}";
+// serialize your input array (say $array)
+$serializedDebt = serialize($ut_debt);
+
+// save serialized data in a text file
+file_put_contents('../writeable/ut_Debt.txt', $serializedDebt);
 
 function getMean($sArr, $aArr){
     $meanArr = array_fill(0, count($sArr), 0);
@@ -51,7 +55,7 @@ function putMultiArray($lArr,$meanArr){
 
 
 // Skapar Json utifrån arrayer
-function SkapaJson( &$plot_skuld, &$ArrYear, $typ )
+function SkapaJson1( &$plot_skuld, &$ArrYear, $typ )
 {
 
     //Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
@@ -61,6 +65,6 @@ function SkapaJson( &$plot_skuld, &$ArrYear, $typ )
         "type" => $typ
     ] ];
     
-    $ut = json_encode( $data ); // Serialisera i json-format.
-    return $ut;
+    $ut_debt = json_encode( $data ); // Serialisera i json-format.
+    return $ut_debt;
 }

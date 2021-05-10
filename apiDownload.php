@@ -28,25 +28,25 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 	$serializedYear = serialize($yearArr);
 
 	// save serialized data in a text file
-	file_put_contents('year.txt', $serializedYear);
+	file_put_contents('../writeable/year.txt', $serializedYear);
 
 	// serialize your input array (say $array)
 	$serializedSkuld = serialize($skuldArr);
 
 	// save serialized data in a text file
-	file_put_contents('skuld.txt', $serializedSkuld);
+	file_put_contents('../writeable/skuld.txt', $serializedSkuld);
 		
 	// serialize your input array (say $array)
 	$serializedAntSkuld = serialize($ant_skuld);
 
 	// save serialized data in a text file
-	file_put_contents('ant_skuld.txt', $serializedAntSkuld);
+	file_put_contents('../writeable/ant_skuld.txt', $serializedAntSkuld);
 
 	// serialize your input array (say $array)
 	$serializedLan = serialize($lanArr);
 
 	// save serialized data in a text file
-	file_put_contents('lan.txt', $serializedLan);
+	file_put_contents('../writeable/lan.txt', $serializedLan);
 
 	
 	/////////////////////////////
