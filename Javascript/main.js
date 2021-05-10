@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     };
 
-    xmlhttp.open("GET", "getSbeta.php" , true);
+    xmlhttp.open("GET", "getRent.php" , true);
     xmlhttp.send();
 
 
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function(){
                     var x_stat = data[0].x;
                     var y_stat = data[0].y[reg];
                     console.log(x_stat);
-                    
                     var dat = [
                         {
                           x: x_stat,
@@ -60,8 +59,46 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         };
    
-        xmlhttp.open("GET", "getSbeta.php", true);
+        xmlhttp.open("GET", "getRent.php", true);
         xmlhttp.send();    
     
     })
+
+    document.getElementById('searchbtn').addEventListener("click", function(e){
+        var reg = document.getElementById("regVal").value;
+        reg = reg.toUpperCase();
+        var xmlhttp = new XMLHttpRequest();   
+        console.log(reg);
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE ) { // Förfrågan klar
+                if (xmlhttp.status == 200) {  // Alles OK, => 200 "vi fortsätter"
+                    var data = JSON.parse( xmlhttp.responseText );
+                    var x_stat = data[0].x;
+                    var y_stat = data[0].y[reg];
+                    console.log(x_stat);
+                    var dat = [
+                        {
+                          x: x_stat,
+                          y: y_stat,
+                          type: 'bar'
+                        }
+                      ];
+                    
+                     Plotly.newPlot('rightStat', dat );
+
+                }
+                else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
+                    alert("There was an error 400");
+                }
+                else { // Mer fel.. => "vi är för oss själva"
+                    alert("something else other than 200 was returned: "+xmlhttp.status);
+                }
+            }
+        };
+   
+        xmlhttp.open("GET", "getDebt.php", true);
+        xmlhttp.send();    
+    
+    })
+
 })

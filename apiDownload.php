@@ -23,12 +23,32 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
             else
                 $url2 = 'INGEN_URL';
 		}
+
+	// serialize your input array (say $array)
+	$serializedYear = serialize($yearArr);
+
+	// save serialized data in a text file
+	file_put_contents('year.txt', $serializedYear);
+
+	// serialize your input array (say $array)
+	$serializedSkuld = serialize($skuldArr);
+
+	// save serialized data in a text file
+	file_put_contents('skuld.txt', $serializedSkuld);
+		
+	// serialize your input array (say $array)
+	$serializedAntSkuld = serialize($ant_skuld);
+
+	// save serialized data in a text file
+	file_put_contents('ant_skuld.txt', $serializedAntSkuld);
+
+	// serialize your input array (say $array)
+	$serializedLan = serialize($lanArr);
+
+	// save serialized data in a text file
+	file_put_contents('lan.txt', $serializedLan);
+
 	
-	$ut = SkapaJson($yearArr, $skuldArr, $ant_skuld, $lanArr,"bar");
-    $test = putMultiArray($lanArr, getMean($skuldArr, $ant_skuld));
-    //var_dump($test);
-	//echo "{$ut}";
-	file_put_contents("txtFile.txt", $ut);
 	/////////////////////////////
 	// FUNKTIONER
 	/////////////////////////////
@@ -77,46 +97,4 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 				$aArr[$index] += $län->$antal_skuldsatta;
 			}
 		}
-	}
-
-	function getMean($sArr, $aArr){
-		$meanArr = array_fill(0, count($sArr), 0);
-		for($i=0; $i<count($meanArr); $i++){
-			$meanArr[$i] = round($sArr[$i] / $aArr[$i], 0);
-		}
-		return $meanArr;
-	}
-
-    function putMultiArray($lArr,$meanArr){
-		$reg = array_unique($lArr);
-		//var_dump($reg);
-		//var_dump($meanArr);
-		// $j=0;
-        // foreach($reg as $key){
-		// 	for($i = 4; $i < count($meanArr); $i+22){
-				
-        //         $plot_skuld[$key][] = $meanArr[$i];
-		// 	}
-        // }
-		// return $plot_skuld;
-		//var_dump($plot_skuld);
-    }
-
-
-	// Skapar Json utifrån arrayer
-	function SkapaJson( &$yArr, &$sArr, &$aArr, &$lArr, $typ )
-	{
-		// Fr.o.m. 2021 är de inte sorterade i bokstavsordning.
-		//array_multisort($yArr, $sArr, $aArr, $lArr);
-		// Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
-		$data = [ [
-			"z" => $yArr,
-			"y" => getMean($sArr, $aArr),
-			"Antal skuldsatta" => $aArr,
-			"x" => $lArr,
-			"type" => $typ  
-		] ];
-		
-		$ut = json_encode( $data ); // Serialisera i json-format.
-		return $ut;
 	}

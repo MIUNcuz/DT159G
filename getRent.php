@@ -12,11 +12,6 @@ header('Content-Type: application/json');
 	$response_hyra = \Httpful\Request::post( $url1 )
 		->body( $postKod )
 		->send();
-	
-
-	
-	//var_dump($test);
-	//echo ($response_hyra);
 
 	
 	$hy_yearArr =array();
@@ -25,7 +20,6 @@ header('Content-Type: application/json');
 
 	$hyra_lan = array();
 	
-
 	$dataIn = json_decode($response_hyra, true);
 
 	$category = $dataIn["dataset"]["dimension"]["Region"]["category"];
@@ -58,14 +52,13 @@ header('Content-Type: application/json');
 			$j++;
 		}
 	}
-//var_dump($plot_hyra);
+
 
 
 
 	$ut = SkapaJson($plot_hyra, $hy_yearArr, $hy_regArr,"bar");
 
 	echo "{$ut}";
-
 
 
 
