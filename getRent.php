@@ -56,9 +56,17 @@ header('Content-Type: application/json');
 
 
 
-	$ut = SkapaJson($plot_hyra, $hy_yearArr, $hy_regArr,"bar");
+	$ut_rent = SkapaJson($plot_hyra, $hy_yearArr, $hy_regArr,"bar");
 
-	echo "{$ut}";
+	echo "{$ut_rent}";
+
+	$rent_arr = twoDimArr($plot_hyra, $hy_yearArr);
+
+
+	$serializedRent = serialize($rent_arr);
+
+	// save serialized data in a text file
+	file_put_contents('../writeable/ut_rent.txt', $serializedRent);
 
 
 
@@ -84,7 +92,18 @@ header('Content-Type: application/json');
 			"type" => $typ  
 		] ];
 		
-		$ut = json_encode( $data ); // Serialisera i json-format.
-		return $ut;
+		$ut_rent = json_encode( $data ); // Serialisera i json-format.
+		return $ut_rent;
+	}
+
+	function twoDimArr(&$plot_hyra, &$hy_yearArr ){
+
+		$data = [ [
+			"year" => $hy_yearArr,
+			"rent" => $plot_skuld
+		] ];
+	
+		return $data;
+		
 	}
 ?>

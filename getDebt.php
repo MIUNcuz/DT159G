@@ -22,11 +22,15 @@ $plot_skuld = putMultiArray($lanArr, getMean($skuldArr, $ant_skuld));
 $ut_debt = SkapaJson1($plot_skuld, $ArrYear, "bar");
 
 echo "{$ut_debt}";
+
+$debt_arr = twoDimArr($plot_skuld, $ArrYear);
+
+
 // serialize your input array (say $array)
-$serializedDebt = serialize($ut_debt);
+$serializedDebt = serialize($debt_arr);
 
 // save serialized data in a text file
-file_put_contents('../writeable/ut_Debt.txt', $serializedDebt);
+file_put_contents('../writeable/ut_debt.txt', $serializedDebt);
 
 function getMean($sArr, $aArr){
     $meanArr = array_fill(0, count($sArr), 0);
@@ -67,4 +71,15 @@ function SkapaJson1( &$plot_skuld, &$ArrYear, $typ )
     
     $ut_debt = json_encode( $data ); // Serialisera i json-format.
     return $ut_debt;
+}
+
+function twoDimArr(&$plot_skuld, &$ArrYear ){
+
+    $data = [ [
+        "year" => $ArrYear,
+        "debt" => $plot_skuld
+    ] ];
+
+    return $data;
+    
 }
