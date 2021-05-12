@@ -8,22 +8,25 @@ $rent = unserialize($recoveredRent);
 
 
 
-$ut_debt = SkapaJson($debt, "bar");
+$ut = SkapaJson($debt,$rent, "bar");
 
-echo "{$ut_debt}";
+echo "{$ut}";
 
 
 
-function SkapaJson( &$debt, $typ )
+function SkapaJson( &$debt, &$rent, $typ )
 	{
 
 		//Skapa ett PHP-objekt, med "JSON-kodat" data anpassat för plotly.
 		$data = [ [
-			"x" => $debt[0]["year"],
-			"y" => $debt[0]["debt"],
+			"d_year" => $debt[0]["year"],
+            "d_debt" => $debt[0]["debt"],
+            "r_year" => $debt[0]["year"],
+            "r_rent" => $debt[0]["rent"],
+            
 			"type" => $typ  
 		] ];
 		
-		$ut_debt = json_encode( $data ); // Serialisera i json-format.
-		return $ut_debt;
+		$ut = json_encode( $data ); // Serialisera i json-format.
+		return $ut;
 	}
