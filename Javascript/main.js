@@ -98,4 +98,52 @@ document.addEventListener("DOMContentLoaded", function(){
     
     })
 
+    document.getElementById('searchbtn').addEventListener("click", function(e){
+        var reg = document.getElementById("regVal").value;
+        var regUp = reg.toUpperCase();
+        var xmlhttp = new XMLHttpRequest();   
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE ) { // Förfrågan klar
+                if (xmlhttp.status == 200) {  // Alles OK, => 200 "vi fortsätter"
+                    var data = JSON.parse( xmlhttp.responseText );
+                    console.log(data);
+                    var x_rent = data[0]["r_year"]
+                    var y_rent = data[0]["r_rent"][reg];
+
+                    var x_debt = data[0]["d_year"];
+                    var y_debt = data[0]["d_debt"][regUp];
+
+                    var trace1 = {
+                        x: x_rent,
+                        y: y_rent,
+                        type: 'scatter',
+                        name:"Medelhyra"
+                      };
+                      
+                      var trace2 = {
+                        x: x_debt,
+                        y: y_debt,
+                        type: 'scatter',
+                        name:"Medelskuld i tkr"
+                      };
+                      
+                      var dat = [trace1, trace2];
+                    
+                    Plotly.newPlot('bottomStat', dat );
+
+                }
+                else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
+                    alert("There was an error 400");
+                }
+                else { // Mer fel.. => "vi är för oss själva"
+                    alert("something else other than 200 was returned: "+xmlhttp.status);
+                }
+            }
+        };
+   
+        xmlhttp.open("GET", "getComp.php", true);
+        xmlhttp.send();    
+    
+    })
+
 })

@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: application/json');
 $recoveredDebt = file_get_contents('../writeable/ut_debt.txt');
 $debt = unserialize($recoveredDebt);
 
@@ -21,9 +21,8 @@ function SkapaJson( &$debt, &$rent, $typ )
 		$data = [ [
 			"d_year" => $debt[0]["year"],
             "d_debt" => $debt[0]["debt"],
-            "r_year" => $debt[0]["year"],
-            "r_rent" => $debt[0]["rent"],
-            
+            "r_year" => $rent[0]["year"],
+            "r_rent" => $rent[0]["rent"],
 			"type" => $typ  
 		] ];
 		
