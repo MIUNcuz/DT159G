@@ -45,8 +45,39 @@ document.addEventListener("DOMContentLoaded", function(){
                           type: 'bar'
                         }
                       ];
+                      var layout = {
+                        title: {
+                          text:'Årshyra per kvm',
+                          font: {
+                            family: 'Courier New, monospace',
+                            size: 24
+                          },
+                          xref: 'paper',
+                          x: 0.05,
+                        },
+                        xaxis: {
+                          title: {
+                            text: 'År',
+                            font: {
+                              family: 'Courier New, monospace',
+                              size: 18,
+                              color: '#7f7f7f'
+                            }
+                          },
+                        },
+                        yaxis: {
+                          title: {
+                            text: 'kostnad i kr',
+                            font: {
+                              family: 'Courier New, monospace',
+                              size: 18,
+                              color: '#7f7f7f'
+                            }
+                          }
+                        }
+                      };
                     
-                     Plotly.newPlot('leftStat', dat );
+                     Plotly.newPlot('leftStat', dat, layout );
 
                 }
                 else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
@@ -80,8 +111,39 @@ document.addEventListener("DOMContentLoaded", function(){
                           type: 'bar'
                         }
                       ];
+                      var layout = {
+                        title: {
+                          text:'Medelskuld per person',
+                          font: {
+                            family: 'Courier New, monospace',
+                            size: 24
+                          },
+                          xref: 'paper',
+                          x: 0.05,
+                        },
+                        xaxis: {
+                          title: {
+                            text: 'År',
+                            font: {
+                              family: 'Courier New, monospace',
+                              size: 18,
+                              color: '#7f7f7f'
+                            }
+                          },
+                        },
+                        yaxis: {
+                          title: {
+                            text: 'Skuld i kr',
+                            font: {
+                              family: 'Courier New, monospace',
+                              size: 18,
+                              color: '#7f7f7f'
+                            }
+                          }
+                        }
+                      };
                     
-                     Plotly.newPlot('rightStat', dat );
+                     Plotly.newPlot('rightStat', dat, layout );
 
                 }
                 else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
@@ -106,12 +168,17 @@ document.addEventListener("DOMContentLoaded", function(){
             if (xmlhttp.readyState == XMLHttpRequest.DONE ) { // Förfrågan klar
                 if (xmlhttp.status == 200) {  // Alles OK, => 200 "vi fortsätter"
                     var data = JSON.parse( xmlhttp.responseText );
-                    console.log(data);
                     var x_rent = data[0]["r_year"]
                     var y_rent = data[0]["r_rent"][reg];
 
                     var x_debt = data[0]["d_year"];
                     var y_debt = data[0]["d_debt"][regUp];
+                    var y_divide = [];
+
+                    for (var i = 0; i < y_debt.length; i++) {
+                        var j = (y_debt[i] / 100);
+                        y_divide.push(Math.round(j));
+                    }
 
                     var trace1 = {
                         x: x_rent,
@@ -122,14 +189,46 @@ document.addEventListener("DOMContentLoaded", function(){
                       
                       var trace2 = {
                         x: x_debt,
-                        y: y_debt,
+                        y: y_divide,
                         type: 'scatter',
                         name:"Medelskuld i tkr"
                       };
                       
                       var dat = [trace1, trace2];
+
+                      var layout = {
+                        title: {
+                          text:'Korrelation skuld & hyra',
+                          font: {
+                            family: 'Courier New, monospace',
+                            size: 24
+                          },
+                          xref: 'paper',
+                          x: 0.05,
+                        },
+                        xaxis: {
+                          title: {
+                            text: 'År',
+                            font: {
+                              family: 'Courier New, monospace',
+                              size: 18,
+                              color: '#7f7f7f'
+                            }
+                          },
+                        },
+                        yaxis: {
+                          title: {
+                            text: 'Belopp',
+                            font: {
+                              family: 'Courier New, monospace',
+                              size: 18,
+                              color: '#7f7f7f'
+                            }
+                          }
+                        }
+                      };
                     
-                    Plotly.newPlot('bottomStat', dat );
+                    Plotly.newPlot('bottomStat', dat, layout );
 
                 }
                 else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
