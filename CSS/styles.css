@@ -53,12 +53,12 @@ body
     background: #aaa;
 }
 
-/* #mainfooter{
+#mainfooter{
     color: #fff;
     background: #333;
     text-align: center;
     min-height: 50px;
-} */
+}
 
 #map{
     min-height: 800px;

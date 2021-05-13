@@ -117,6 +117,11 @@ function setupMap() {
         .setLngLat([18.290, 57.640])
         .setPopup(new mapboxgl.Popup().setHTML("<h3>Gotland</h3>"))
         .addTo(map);
+
+        marker.getElement().addEventListener('click', () => {
+            alert("Clicked");
+        });
+
 }
 
 setupMap();
