@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-// at a later point, you can convert it back to array like &  unserializing to get actual array:
+//Läser av från textfiler för att sedan avserialisera datan.
 $recoveredYear = file_get_contents('../writeable/year.txt');
 $yearArr = unserialize($recoveredYear);
 $recoveredSkuld = file_get_contents('../writeable/skuld.txt');
@@ -11,11 +11,13 @@ $ant_skuld = unserialize($recoveredAntSkuld);
 $recoveredLan = file_get_contents('../writeable/lan.txt');
 $lanArr = unserialize($recoveredLan);
 
+// Städar upp arrayer för att möjligöra plottning. 
 $objYear = array_unique($yearArr);
 unset($objYear[0]);
-
 $ArrYear = (array) $objYear;
 $ArrYear = array_values($ArrYear);
+
+
 
 $plot_skuld = putMultiArray($lanArr, getMean($skuldArr, $ant_skuld));
 
@@ -26,12 +28,19 @@ echo "{$ut_debt}";
 $debt_arr = twoDimArr($plot_skuld, $ArrYear);
 
 
-// serialize your input array (say $array)
+// serialiserar array för att sedan skriva till textfil. 
 $serializedDebt = serialize($debt_arr);
-
-// save serialized data in a text file
 file_put_contents('../writeable/ut_debt.txt', $serializedDebt);
 
+/////////////////////////////////////////////////////
+//                                                 //
+//             FUNKTIONER                          //   
+//                                                 //
+/////////////////////////////////////////////////////
+
+
+
+// funktion som returnerar medelvärdet 
 function getMean($sArr, $aArr){
     $meanArr = array_fill(0, count($sArr), 0);
     for($i=0; $i<count($meanArr); $i++){
@@ -40,9 +49,8 @@ function getMean($sArr, $aArr){
     return $meanArr;
 }
 
-
+// funktion som mappar regioner med deras värden 
 function putMultiArray($lArr,$meanArr){
-    //$reg = $lArr;
     $reg = array_slice($lArr,4);
     $reg = array_unique($reg);
     $start = 4;
@@ -73,6 +81,7 @@ function SkapaJson1( &$plot_skuld, &$ArrYear, $typ )
     return $ut_debt;
 }
 
+//funktion som skapar en två-dimensionell array. 
 function twoDimArr(&$plot_skuld, &$ArrYear ){
 
     $data = [ [

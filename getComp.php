@@ -1,8 +1,9 @@
 <?php
 header('Content-Type: application/json');
+
+// Läser från textfiler samt av serialiserar textfilerna.
 $recoveredDebt = file_get_contents('../writeable/ut_debt.txt');
 $debt = unserialize($recoveredDebt);
-
 $recoveredRent = file_get_contents('../writeable/ut_rent.txt');
 $rent = unserialize($recoveredRent);
 

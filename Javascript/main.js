@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 var reg = data[0].z;
                 for(var i=0; i < reg.length; i++){       
                    document.getElementById("regVal").innerHTML +="<option value='"+reg[i]+"'>"+         
-                    reg[i]+"</option>";      
+                    reg[i]+"</option>";  //fyller på option med regioner.     
                 
                 }
            }

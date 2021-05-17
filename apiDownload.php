@@ -24,28 +24,14 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
                 $url2 = 'INGEN_URL';
 		}
 
-	// serialize your input array (say $array)
+	// serialiserar arrayer för att sedan spara datan i en textfil
 	$serializedYear = serialize($yearArr);
-
-	// save serialized data in a text file
 	file_put_contents('../writeable/year.txt', $serializedYear);
-
-	// serialize your input array (say $array)
 	$serializedSkuld = serialize($skuldArr);
-
-	// save serialized data in a text file
 	file_put_contents('../writeable/skuld.txt', $serializedSkuld);
-		
-	// serialize your input array (say $array)
 	$serializedAntSkuld = serialize($ant_skuld);
-
-	// save serialized data in a text file
 	file_put_contents('../writeable/ant_skuld.txt', $serializedAntSkuld);
-
-	// serialize your input array (say $array)
 	$serializedLan = serialize($lanArr);
-
-	// save serialized data in a text file
 	file_put_contents('../writeable/lan.txt', $serializedLan);
 
 	
@@ -75,7 +61,7 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 	// https://www.php.net/manual/en/functions.arguments.php
 	function fyllArrayer( &$inData, &$yArr, &$sArr, &$aArr, &$lArr )
 	{
-		// Namnen på medlemsvariablerna i kommunerna
+		// Namnen på medlemsvariablerna i reginonerna
 		$year="år";
 		$antal_skuldsatta="antal skuldsatta";
 		$skuldbelopp="skuldbelopp";
