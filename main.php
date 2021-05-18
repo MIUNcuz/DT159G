@@ -1,3 +1,6 @@
+<?php include("resetStats.php");
+$time_date1 = date_check1();
+?>
 <?php include("includes/header.php"); ?>
 <section>
         <div id="map">

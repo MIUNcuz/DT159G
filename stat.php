@@ -1,4 +1,7 @@
-<?php include("includes/header.php"); ?>
+<?php include("resetStats.php");
+$time_date2 = date_check2();
+?>
+<?php include("includes/header.php");?>
 <script src="Javascript/main.js"></script>
 
 
