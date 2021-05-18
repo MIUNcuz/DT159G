@@ -1,5 +1,7 @@
 <?php include("includes/header.php"); ?>
 <script src="Javascript/main.js"></script>
+
+
 <nav id="navMenu">
         <select id="regVal" class="form-control"></select>
         <button id="searchbtn">Välj region</button>
