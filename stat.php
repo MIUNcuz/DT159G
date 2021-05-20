@@ -1,7 +1,8 @@
 <?php include("resetStats.php");
 $time_date2 = date_check2();
 ?>
-<?php include("includes/header.php");?>
+<?php $page_title = "Statistik";
+ include("includes/header.php");?>
 <?php include("includes/statmenu.php");?>
 <script src="Javascript/main.js"></script>
 

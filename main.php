@@ -1,7 +1,8 @@
 <?php include("resetStats.php");
 $time_date1 = date_check1();
 ?>
-<?php include("includes/header.php"); ?>
+<?php $page_title = "Karta";
+ include("includes/header.php"); ?>
 <?php include("includes/mainmenu.php");?>
 <section>
         <div id="map">
