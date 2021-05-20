@@ -1,3 +1,15 @@
+<!-- //////////////////////////////////////////////////////////////////////////
+    //
+    // filnamn: mainmenu.php
+    // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+    // Kurs : Tillämpad datateknik DT159G
+    // Universitet: Mitt Universitet 
+    // Beskrivning:
+    // 
+    // 
+    //
+    //
+    ////////////////////////////////////////////////////////////////////////// -->
 <div id="container">
         <nav id="mainmenu">
             <ul>

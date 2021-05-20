@@ -1,4 +1,17 @@
 <?php
+//////////////////////////////////////////////////////////////////////////
+//
+// filnamn: stat.php
+// Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+// Kurs : Tillämpad datateknik DT159G
+// Universitet: Mitt Universitet 
+// Beskrivning:
+// 
+// 
+//
+//
+//////////////////////////////////////////////////////////////////////////
+
 header('Content-Type: application/json');
 
 // Läser från textfiler samt av serialiserar textfilerna.

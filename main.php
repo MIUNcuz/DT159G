@@ -1,9 +1,22 @@
-<?php include("resetStats.php");
+<?php
+//////////////////////////////////////////////////////////////////////////
+//
+// filnamn: main.php
+// Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+// Kurs : Tillämpad datateknik DT159G
+// Universitet: Mitt Universitet 
+// Beskrivning:
+// 
+// 
+//
+//
+//////////////////////////////////////////////////////////////////////////
+include("resetStats.php");
 $time_date1 = date_check1();
-?>
-<?php $page_title = "Karta";
- include("includes/header.php"); ?>
-<?php include("includes/mainmenu.php");?>
+
+$page_title = "Karta";
+ include("includes/header.php");
+include("includes/mainmenu.php");?>
 <section>
         <div id="map">
                 <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">

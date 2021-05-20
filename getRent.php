@@ -1,4 +1,18 @@
 <?php
+//////////////////////////////////////////////////////////////////////////
+//
+// filnamn: getRent.php
+// Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+// Kurs : Tillämpad datateknik DT159G
+// Universitet: Mitt Universitet 
+// Beskrivning:
+// 
+// 
+//
+//
+//////////////////////////////////////////////////////////////////////////
+
+
 header('Content-Type: application/json');
 	// Länk till nedladdade REST-biblioteket. Detta ligger i mappen biblo i överordnad katalog.
 	include('biblo/httpful.phar');

@@ -1,9 +1,22 @@
-<?php include("resetStats.php");
+<?php 
+//////////////////////////////////////////////////////////////////////////
+//
+// filnamn: stat.php
+// Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+// Kurs : Tillämpad datateknik DT159G
+// Universitet: Mitt Universitet 
+// Beskrivning:
+// 
+// 
+//
+//
+//////////////////////////////////////////////////////////////////////////
+include("resetStats.php");
 $time_date2 = date_check2();
-?>
-<?php $page_title = "Statistik";
- include("includes/header.php");?>
-<?php include("includes/statmenu.php");?>
+
+$page_title = "Statistik";
+include("includes/header.php");
+include("includes/statmenu.php");?>
 <script src="Javascript/main.js"></script>
 
 
