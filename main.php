@@ -2,6 +2,7 @@
 $time_date1 = date_check1();
 ?>
 <?php include("includes/header.php"); ?>
+<?php include("includes/mainmenu.php");?>
 <section>
         <div id="map">
                 <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">

@@ -65,6 +65,14 @@ body
     height: 100%;
     width: 100%;
 }
+#centrum
+{
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6em;
+    margin: 0px;
+    padding: 0px;
+}
 
 #leftStat{
     width: 50%; 
@@ -105,4 +113,27 @@ body
     color: #222;
     background-color: #fff;
     border-radius: 3px;
+  }
+
+  .button
+  {
+    background-color: #ccc; 
+    /* border: none; */
+    border: 1px solid #333;
+    color: black;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .button:hover
+  {
+      background-color : white;
+      color:black;
+
   }

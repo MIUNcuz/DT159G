@@ -16,5 +16,5 @@ include("includes/config.php");
         <h1>Hyra & Skuld</h1>
     </div>
 </header>
-<?php include("includes/mainmenu.php");?>
+
     
