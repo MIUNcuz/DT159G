@@ -8,11 +8,27 @@ $time_date1 = date_check1();
                 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
             <script src='Javascript/maps.js'> </script>
         <div>
-        <div class='quakeInfo'>
+        <div class='mapStats'>
                 <div><strong>Län:</strong> <span id='lan'></span></div>
-                <div><strong>Medelhyra:</strong> <span id='mhyra'></span></div>
-                <div><strong>Medelskuld:</strong> <span id='mskuld'></span></div>
+                <div><strong>Årshyra:</strong> <span id='mhyra'></span><span> Kr/kvm</span></div>
+                <div><strong>Medelskuld:</strong> <span id='mskuld'></span><span> Kr/person</span></div>
         </div>
+
+        <div id="menu">
+                <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
+                <!-- See a list of Mapbox-hosted public styles at -->
+                <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+                <label for="satellite-v9">Satellit</label>
+                <input id="light-v10" type="radio" name="rtoggle" value="light">
+                <label for="light-v10">Ljus</label>
+                <input id="dark-v10" type="radio" name="rtoggle" value="dark">
+                <label for="dark-v10">Mörk</label>
+                <input id="streets-v11" type="radio" name="rtoggle" value="streets">
+                <label for="streets-v11">Gator</label>
+                <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+                <label for="outdoors-v11">Utomhus</label>
+        </div>
+
 </section>
 <?php include("includes/footer.php"); ?>
 
