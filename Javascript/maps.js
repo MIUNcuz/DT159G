@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/outdoors-v11',
+        style: 'mapbox://styles/mapbox/light-v10',
         center: [17.28366, 62.39470],
         zoom: 4,
         maxZoom: 6,
@@ -149,6 +149,7 @@ function mapInfo(data){
     var mhyraDisplay = document.getElementById('mhyra');
     var mskuldDisplay = document.getElementById('mskuld');
 
+    //Sätter en def
     lanDisplay.innerHTML = "Stockholm";
     mhyraDisplay.innerHTML = data[0]["r_rent"]["Stockholms län"][4];
     mskuldDisplay.innerHTML = data[0]["d_debt"]["STOCKHOLMS LÄN"][4];

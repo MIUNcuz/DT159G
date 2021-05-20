@@ -112,7 +112,8 @@ body
     font-size: 14px;
     color: #222;
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .marker {
