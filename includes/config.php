@@ -1,4 +1,3 @@
 <?php
-$site_title = "Skuld & Hyror";
-$page_title = "Karta";
+$site_title = "Skulder & Hyra";
 $divider = " | ";
