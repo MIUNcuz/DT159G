@@ -13,7 +13,7 @@ include("includes/config.php");
 <body>
 <header id="mainheader">
     <div class="container">
-        <h1>Hyra & Skuld</h1>
+    <img src="img/red.png" id="hLogo" alt="Korrelation logotyp">
     </div>
 </header>
 
