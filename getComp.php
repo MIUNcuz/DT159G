@@ -1,7 +1,7 @@
 <?php
 //////////////////////////////////////////////////////////////////////////
 //
-// filnamn: stat.php
+// filnamn: getComp.php
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
