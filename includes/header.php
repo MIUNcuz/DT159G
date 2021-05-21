@@ -5,10 +5,11 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
+// Datum: 2021-05-
 // Beskrivning:
 // 
-// 
-//
+// Fungerar som själva huvudet på webbplatsen, därmed innehåller den stand-
+// ard kod som återfinns för html. 
 //
 //////////////////////////////////////////////////////////////////////////
 
@@ -26,7 +27,7 @@ include("includes/config.php");
 <body>
 <header id="mainheader">
     <div class="container">
-    <img src="img/red.png" id="hLogo" alt="Korrelation logotyp">
+    <img src="img/red.png" id="hLogo" alt="Webbplatsens logotyp">
     </div>
 </header>
 

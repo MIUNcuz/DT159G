@@ -1,3 +1,17 @@
+//////////////////////////////////////////////////////////////////////////
+//
+// filnamn: maps.js
+// Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+// Kurs : Tillämpad datateknik DT159G
+// Universitet: Mitt Universitet
+// Datum: 2021-05- 
+// Beskrivning:
+// 
+// 
+//
+//
+//////////////////////////////////////////////////////////////////////////
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxmcmVkayIsImEiOiJja20zamlzdjM0eTlzMm9uMWhsZjk1czhkIn0.JvbY4ViBCPSXT-8msBh7Dw';
 var data = [];
 document.addEventListener("DOMContentLoaded", function () {

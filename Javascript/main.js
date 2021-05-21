@@ -1,3 +1,19 @@
+//////////////////////////////////////////////////////////////////////////
+//
+// filnamn: main.js
+// Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+// Kurs : Tillämpad datateknik DT159G
+// Datum: 2021-05-
+// Universitet: Mitt Universitet 
+// Beskrivning:
+// 
+// Javascript som möjliggör plottning m.h.a biblioteket Plottly. 
+// Djupare information, filen fyller på option-elementet med lista av län.
+// sedan m.h.a eventlister som lyssnar efter klick på knappen exekveras 
+// funktioner som plottar ut valt läns statiskt i form av tre olika figurer.
+//
+//////////////////////////////////////////////////////////////////////////
+
 // Väntar för att DOM ska ladda
 document.addEventListener("DOMContentLoaded", function () {
   var xmlhttp = new XMLHttpRequest();

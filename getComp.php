@@ -4,11 +4,13 @@
 // filnamn: getComp.php
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
-// Universitet: Mitt Universitet 
+// Universitet: Mitt Universitet
+// Datum: 2021-05- 
 // Beskrivning:
 // 
-// 
-//
+// PHP-fil som sammanställer data från scb och Kronofogden i from av de
+// textfiler som skapats. För att till sist skapa kombinerad datafil som
+// nyttjas för att kuna visa information på webbplatsens karta. 
 //
 //////////////////////////////////////////////////////////////////////////
 
@@ -22,8 +24,8 @@ $rent = unserialize($recoveredRent);
 
 
 
-$ut = SkapaJson($debt,$rent, "bar");
 
+$ut = SkapaJson($debt,$rent, "bar");
 echo "{$ut}";
 
 

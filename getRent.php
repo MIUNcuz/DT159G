@@ -5,10 +5,11 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
+// Datum: 2021-05-
 // Beskrivning:
 // 
-// 
-//
+// PHP-fil som Skickar API-förfrågan till scb, för att sedan behandla 
+// responsen-filen så datat kan nyttjas till webbplatsens tjänster. 
 //
 //////////////////////////////////////////////////////////////////////////
 
@@ -71,9 +72,7 @@ header('Content-Type: application/json');
 
 
 	$ut_rent = SkapaJson($plot_hyra, $hy_yearArr, $hy_regArr,"bar");
-
 	echo "{$ut_rent}";
-
 	$rent_arr = twoDimArr($plot_hyra, $hy_yearArr);
 
 

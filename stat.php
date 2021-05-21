@@ -4,11 +4,12 @@
 // filnamn: stat.php
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
-// Universitet: Mitt Universitet 
+// Universitet: Mitt Universitet
+// Datum: 2021-05- 
 // Beskrivning:
 // 
-// 
-//
+// Webbsida som visar statiskt för användaren i form av stapeldiagram och
+// linjediagram. 
 //
 //////////////////////////////////////////////////////////////////////////
 
@@ -18,9 +19,9 @@ include("includes/statmenu.php");?>
 
 <script src="Javascript/main.js"></script>
 
-<section class="stat-main">
-    <div class="container grid">
-        <div id="centrum" class="flex"><!--Vald region visas här --></div>
+<section id="centrum"><!--Vald region visas här --></section>
+<section id="leftStat">
+    <div id="graf"> <!-- Plotly ritas här --></div>
 
         <div id="leftStat" class="flex"> <!-- Här visas statistik för hyran-->
         </div>

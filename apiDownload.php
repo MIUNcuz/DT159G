@@ -5,10 +5,12 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
+// Datum: 2021-05-
 // Beskrivning:
 // 
-// 
-//
+// PHP-fil som hämtar data från Kronofogdens API. För att sedan spara ner
+// responsen till olika textfiler.
+// (Anledning, stor datamängd som skapade lång response-tid)
 //
 //////////////////////////////////////////////////////////////////////////
 
