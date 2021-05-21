@@ -5,10 +5,11 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
+// Datum: 2021-05-
 // Beskrivning:
 // 
-// 
-//
+// PHP-fil som Skickar API-förfrågan till scb, för att sedan behandla 
+// responsen-filen så datat kan nyttjas till webbplatsens tjänster. 
 //
 //////////////////////////////////////////////////////////////////////////
 

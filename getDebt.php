@@ -5,10 +5,12 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
+// Datum: 2021-05-
 // Beskrivning:
 // 
-// 
-//
+// Behandlar data som återfinns i textfiler som skapats av apiDownload.php
+// För att sedan skapa önskat format som behövs för att kunna visa statis- 
+// tiken för webblatsens användare. 
 //
 //////////////////////////////////////////////////////////////////////////
 

@@ -5,10 +5,11 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
+// Datum: 2021-05-
 // Beskrivning:
 // 
-// 
-//
+// Fungerar som själva huvudet på webbplatsen, därmed innehåller den stand-
+// ard kod som återfinns för html. 
 //
 //////////////////////////////////////////////////////////////////////////
 

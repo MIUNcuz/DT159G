@@ -2,12 +2,14 @@
     //
     // filnamn: statmenu.php
     // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
-    // Kurs : Tillämpad datateknik DT159G
-    // Universitet: Mitt Universitet 
+    // Kurs: Tillämpad datateknik DT159G
+    // Universitet: Mitt Universitet
+    / Datum: 2021-05-
     // Beskrivning:
     // 
-    // 
-    //
+    // Html-kod som skapar en liknande navigeringsbar som mainmenu.php 
+    // till skillnad att denna även tillhandahåller ett option element som
+    // som visar län. Samt en knapp "välj län". 
     //
     ////////////////////////////////////////////////////////////////////////// -->
 <div id="container">

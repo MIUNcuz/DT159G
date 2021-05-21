@@ -3,10 +3,11 @@
     // filnamn: mainmenu.php
     // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
     // Kurs : Tillämpad datateknik DT159G
-    // Universitet: Mitt Universitet 
+    // Universitet: Mitt Universitet
+    // Datum: 2021-05- 
     // Beskrivning:
     // 
-    // 
+    // Skapar en navigeringsbar för att kunna skifta mellan karta och statistik.
     //
     //
     ////////////////////////////////////////////////////////////////////////// -->

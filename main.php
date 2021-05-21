@@ -4,11 +4,13 @@
 // filnamn: main.php
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
-// Universitet: Mitt Universitet 
+// Universitet: Mitt Universitet
+// Datum: 2021-05- 
 // Beskrivning:
 // 
-// 
-//
+// Startsidan för webbplatsen. Visar en karta över världen med fokus på
+// Sverige. Möjliggör för användaren att klicka på olika markers för att
+// kunna visa information av valt län. 
 //
 //////////////////////////////////////////////////////////////////////////
 
