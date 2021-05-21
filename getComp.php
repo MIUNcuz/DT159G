@@ -24,6 +24,7 @@ $rent = unserialize($recoveredRent);
 
 
 
+
 $ut = SkapaJson($debt,$rent, "bar");
 echo "{$ut}";
 

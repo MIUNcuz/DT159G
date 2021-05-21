@@ -88,6 +88,22 @@ body
 #bottomStat
 {
  clear: both;
+ width: 100%;
+}
+@media (max-width:728px)
+{
+    #leftStat, #rightStat
+    {
+        width: 100%;
+        float: none;
+        border: none;
+    }
+    #bottomStat
+    {
+        width: auto;
+        float: none;
+        border: none;
+    }
 }
 
 #navMenu
