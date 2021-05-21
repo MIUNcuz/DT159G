@@ -27,7 +27,7 @@ include("includes/config.php");
 <body>
 <header id="mainheader">
     <div class="container">
-    <img src="img/red.png" id="hLogo" alt="Korrelation logotyp">
+    <img src="img/red.png" id="hLogo" alt="Webbplatsens logotyp">
     </div>
 </header>
 
