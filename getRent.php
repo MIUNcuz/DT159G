@@ -72,9 +72,7 @@ header('Content-Type: application/json');
 
 
 	$ut_rent = SkapaJson($plot_hyra, $hy_yearArr, $hy_regArr,"bar");
-
 	echo "{$ut_rent}";
-
 	$rent_arr = twoDimArr($plot_hyra, $hy_yearArr);
 
 

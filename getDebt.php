@@ -105,6 +105,5 @@ function twoDimArr(&$plot_skuld, &$ArrYear ){
         "debt" => $plot_skuld
     ] ];
 
-    return $data;
-    
+    return $data;    
 }
