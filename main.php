@@ -24,7 +24,7 @@ include("includes/mainmenu.php");?>
         <div class='mapStats'>
                 <div><strong>Län:</strong> <span id='lan'></span></div>
                 <div><strong>Årshyra:</strong> <span id='mhyra'></span><span> Kr/kvm</span></div>
-                <div><strong>Medelskuld:</strong> <span id='mskuld'></span><span> Kr/person</span></div>
+                <div><strong>Medelskuld:</strong> <span id='mskuld'></span><span> Kr/skuldsatt</span></div>
         </div>
 
         <div id="menu">
