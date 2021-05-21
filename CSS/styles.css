@@ -150,6 +150,7 @@ body
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 8px;
+
   }
   .button:hover
   {
@@ -157,3 +158,4 @@ body
       color:black;
 
   }
+

@@ -11,8 +11,6 @@
 //
 //
 //////////////////////////////////////////////////////////////////////////
-include("resetStats.php");
-$time_date2 = date_check2();
 
 $page_title = "Statistik";
 include("includes/header.php");

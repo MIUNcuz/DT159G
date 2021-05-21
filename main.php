@@ -11,8 +11,6 @@
 //
 //
 //////////////////////////////////////////////////////////////////////////
-include("resetStats.php");
-$time_date1 = date_check1();
 
 $page_title = "Karta";
  include("includes/header.php");
