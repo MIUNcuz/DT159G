@@ -4,7 +4,7 @@
 // filnamn: getDebt.php
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
-// Universitet: Mitt Universitet 
+// Universitet: Mittuniversitet 
 // Beskrivning:
 // 
 // 
@@ -34,12 +34,12 @@ $ArrYear = array_values($ArrYear);
 
 
 $plot_skuld = putMultiArray($lanArr, getMean($skuldArr, $ant_skuld));
-
+$plot_ant = putMultiArrayAnt($lanArr, $ant_skuld);
 $ut_debt = SkapaJson1($plot_skuld, $ArrYear, "bar");
 
 echo "{$ut_debt}";
 
-$debt_arr = twoDimArr($plot_skuld, $ArrYear);
+$debt_arr = twoDimArr($plot_skuld, $ArrYear, $plot_ant);
 
 
 // serialiserar array för att sedan skriva till textfil. 
@@ -79,6 +79,21 @@ function putMultiArray($lArr,$meanArr){
     return $plot_skuld;
 }
 
+function putMultiArrayAnt($lArr,$ant_skuld){
+    $reg = array_slice($lArr,4);
+    $reg = array_unique($reg);
+    $start = 4;
+    foreach($reg as $key){
+        $j=0;
+        for($i = 0; $i < 5; $i++){	
+            $plot_ant[$key][] = $ant_skuld[$start+$j];
+            $j= $j+22;
+        }
+        $start++;
+    }
+    return $plot_ant;
+}
+
 
 // Skapar Json utifrån arrayer
 function SkapaJson1( &$plot_skuld, &$ArrYear, $typ )
@@ -96,11 +111,12 @@ function SkapaJson1( &$plot_skuld, &$ArrYear, $typ )
 }
 
 //funktion som skapar en två-dimensionell array. 
-function twoDimArr(&$plot_skuld, &$ArrYear ){
+function twoDimArr(&$plot_skuld, &$ArrYear, &$plot_ant ){
 
     $data = [ [
         "year" => $ArrYear,
-        "debt" => $plot_skuld
+        "debt" => $plot_skuld,
+        "antal" => $plot_ant
     ] ];
 
     return $data;

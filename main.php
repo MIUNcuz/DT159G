@@ -22,9 +22,10 @@ include("includes/mainmenu.php");?>
             <script src='Javascript/maps.js'> </script>
         <div>
         <div class='mapStats'>
-                <div><strong>Län:</strong> <span id='lan'></span></div>
+                <div><span id='lan'></span></div>
                 <div><strong>Årshyra:</strong> <span id='mhyra'></span><span> Kr/kvm</span></div>
                 <div><strong>Medelskuld:</strong> <span id='mskuld'></span><span> Kr/skuldsatt</span></div>
+                <div><strong>Antal skuldsatta:</strong> <span id='antSkuld'></span><span> personer</span></div>
         </div>
 
         <div id="menu">

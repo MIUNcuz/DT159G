@@ -35,6 +35,7 @@ function SkapaJson( &$debt, &$rent, $typ )
 		$data = [ [
 			"d_year" => $debt[0]["year"],
             "d_debt" => $debt[0]["debt"],
+			"d_ant" => $debt[0]["antal"],
             "r_year" => $rent[0]["year"],
             "r_rent" => $rent[0]["rent"],
 			"type" => $typ  

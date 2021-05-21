@@ -15,23 +15,21 @@
 $page_title = "Statistik";
 include("includes/header.php");
 include("includes/statmenu.php");?>
+
 <script src="Javascript/main.js"></script>
 
+<section class="stat-main">
+    <div class="container grid">
+        <div id="centrum" class="flex"><!--Vald region visas här --></div>
 
-<!-- <nav id="navMenu">
-        <select id="regVal" class="form-control"></select>
-        <button id="searchbtn">Välj region</button>
-</nav> -->
-<section id="centrum"><!--Vald region visas här --></section>
-<section id="leftStat">
-    <div id="graf"> <!-- Plotly ritas här --></div>
+        <div id="leftStat" class="flex"> <!-- Här visas statistik för hyran-->
+        </div>
 
-</section>
+        <div id="rightStat" class="flex">  <!-- Här visas statistik för skulden-->
+        </div>
 
-<section id="rightStat">
-    
-</section>
-
-<section id="bottomStat">    
+        <div id="bottomStat" class="flex">    
+        </div>
+    </div>
 </section>
 <?php include("includes/footer.php"); ?>

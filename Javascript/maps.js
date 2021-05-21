@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 data = JSON.parse(xmlhttp.responseText);
                 mapInfo(data);
                 changeLayer();
+                console.log(data);
             }
             else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
                 alert("There was an error 400");
@@ -149,115 +150,138 @@ function mapInfo(data) {
     var lanDisplay = document.getElementById('lan');
     var mhyraDisplay = document.getElementById('mhyra');
     var mskuldDisplay = document.getElementById('mskuld');
+    var antSkuldDisplay = document.getElementById('antSkuld');
 
     //Data visas för stockholm innan ett län har tryckts på kartan
-    lanDisplay.innerHTML = "Stockholm";
+    lanDisplay.innerHTML = "<h2>Stockholm</h2>";
     mhyraDisplay.innerHTML = data[0]["r_rent"]["Stockholms län"][4];
     mskuldDisplay.innerHTML = data[0]["d_debt"]["STOCKHOLMS LÄN"][4];
+    antSkuldDisplay.innerHTML = data[0]["d_ant"]["STOCKHOLMS LÄN"][4];
     
     vnMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Västernorrland";
+        lanDisplay.innerHTML = "<h2>Västernorrland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Västernorrlands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["VÄSTERNORRLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["VÄSTERNORRLANDS LÄN"][4];
     });
     stMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Stockholm";
+        lanDisplay.innerHTML = "<h2>Stockholm</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Stockholms län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["STOCKHOLMS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["STOCKHOLMS LÄN"][4];
     });
     vbMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Västerbotten";
+        lanDisplay.innerHTML = "<h2>Västerbotten</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Västerbottens län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["VÄSTERBOTTENS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["VÄSTERBOTTENS LÄN"][4];
     });
     nbMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Norrbotten";
+        lanDisplay.innerHTML = "<h2>Norrbotten</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Norrbottens län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["NORRBOTTENS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["NORRBOTTENS LÄN"][4];
     });
     skMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Skåne";
+        lanDisplay.innerHTML = "<h2>Skåne</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Skåne län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["SKÅNE LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["SKÅNE LÄN"][4];
     });
     kaMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Kalmar";
+        lanDisplay.innerHTML = "<h2>Kalmar</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Kalmar län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["KALMAR LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["KALMAR LÄN"][4];
     });
     blMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Blekinge";
+        lanDisplay.innerHTML = "<h2>Blekinge</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Blekinge län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["BLEKINGE LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["BLEKINGE LÄN"][4];
     });
     haMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Halland";
+        lanDisplay.innerHTML = "<h2>Halland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Hallands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["HALLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["HALLANDS LÄN"][4];
     });
     krMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Kronoberg";
+        lanDisplay.innerHTML = "<h2>Kronoberg</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Kronobergs län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["KRONOBERGS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["KRONOBERGS LÄN"][4];
     });
     joMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Jönköping";
+        lanDisplay.innerHTML = "<h2>Jönköping</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Jönköpings län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["JÖNKÖPINGS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["JÖNKÖPINGS LÄN"][4];
     });
     vgMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Västra Götaland";
+        lanDisplay.innerHTML = "<h2>Västra Götaland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Västra Götalands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["VÄSTRA GÖTALANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["VÄSTRA GÖTALANDS LÄN"][4];
     });
     ogMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Östergötland";
+        lanDisplay.innerHTML = "<h2>Östergötland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Östergötlands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["ÖSTERGÖTLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["ÖSTERGÖTLANDS LÄN"][4];
     });
     orMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Örebro";
+        lanDisplay.innerHTML = "<h2>Örebro</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Örebro län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["ÖREBRO LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["ÖREBRO LÄN"][4];
     });
     vlMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Värmland";
+        lanDisplay.innerHTML = "<h2>Värmland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Värmlands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["VÄRMLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["VÄRMLANDS LÄN"][4];
     });
     slMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Södermanland";
+        lanDisplay.innerHTML = "<h2>Södermanland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Södermanlands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["SÖDERMANLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["SÖDERMANLANDS LÄN"][4];
     });
     upMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Uppsala";
+        lanDisplay.innerHTML = "<h2>Uppsala</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Uppsala län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["UPPSALA LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["UPPSALA LÄN"][4];
     });
     vmlMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Västmanland";
+        lanDisplay.innerHTML = "<h2>Västmanland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Västmanlands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["VÄSTMANLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["VÄSTMANLANDS LÄN"][4];
     });
     daMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Dalarna";
+        lanDisplay.innerHTML = "<h2>Dalarna</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Dalarnas län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["DALARNAS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["DALARNAS LÄN"][4];
     });
     jlMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Jämtland";
+        lanDisplay.innerHTML = "<h2>Jämtland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Jämtlands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["JÄMTLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["JÄMTLANDS LÄN"][4];
     });
     gbMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Gävleborg";
+        lanDisplay.innerHTML = "<h2>Gävleborg</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Gävleborgs län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["GÄVLEBORGS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["GÄVLEBORGS LÄN"][4];
     });
     glMarker.getElement().addEventListener('click', () => {
-        lanDisplay.innerHTML = "Gotland";
+        lanDisplay.innerHTML = "<h2>Gotland</h2>";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Gotlands län"][4];
         mskuldDisplay.innerHTML = data[0]["d_debt"]["GOTLANDS LÄN"][4];
+        antSkuldDisplay.innerHTML = data[0]["d_ant"]["GOTLANDS LÄN"][4];
     });
 }
