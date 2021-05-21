@@ -4,50 +4,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
-      if (xmlhttp.readyState == XMLHttpRequest.DONE) { // Förfrågan klar
-        if (xmlhttp.status == 200) {  // Alles OK, => 200 "vi fortsätter"
-          data = JSON.parse(xmlhttp.responseText);
-          mapInfo(data);
-          changeLayer();
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) { // Förfrågan klar
+            if (xmlhttp.status == 200) {  // Alles OK, => 200 "vi fortsätter"
+                data = JSON.parse(xmlhttp.responseText);
+                mapInfo(data);
+                changeLayer();
+            }
+            else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
+                alert("There was an error 400");
+            }
+            else { // Mer fel.. => "vi är för oss själva"
+                alert("something else other than 200 was returned: " + xmlhttp.status);
+            }
         }
-        else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
-          alert("There was an error 400");
-        }
-        else { // Mer fel.. => "vi är för oss själva"
-          alert("something else other than 200 was returned: " + xmlhttp.status);
-        }
-      }
     };
-  
+
     xmlhttp.open("GET", "getComp.php", true);
     xmlhttp.send();
 });
 
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
-        center: [17.28366, 62.39470],
-        zoom: 4,
-        maxZoom: 6,
-        minZoom: 4
-    })
-    map.addControl(new mapboxgl.NavigationControl());
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    center: [17.28366, 62.39470],
+    zoom: 4,
+    maxZoom: 6,
+    minZoom: 4
+})
+map.addControl(new mapboxgl.NavigationControl());
 
-function changeLayer(){
+////////Funktion för att byta utseende på kartan
+function changeLayer() {
     var layerList = document.getElementById('menu');
     var inputs = layerList.getElementsByTagName('input');
-     
+
     function switchLayer(layer) {
-    var layerId = layer.target.id;
-    map.setStyle('mapbox://styles/mapbox/' + layerId);
+        var layerId = layer.target.id;
+        map.setStyle('mapbox://styles/mapbox/' + layerId);
     }
-     
+
     for (var i = 0; i < inputs.length; i++) {
-    inputs[i].onclick = switchLayer;
+        inputs[i].onclick = switchLayer;
     }
 }
-
-function createDiv(){
+////////Funktion för att skapa element
+function createDiv() {
     var markers = [];
     for (var i = 0; i < 21; ++i) {
         markers[i] = document.createElement('div');
@@ -143,17 +144,17 @@ var glMarker = new mapboxgl.Marker(el1[20])
     .addTo(map);
 
 
-
-function mapInfo(data){
+////////Funktion för att visa data på kartsidan
+function mapInfo(data) {
     var lanDisplay = document.getElementById('lan');
     var mhyraDisplay = document.getElementById('mhyra');
     var mskuldDisplay = document.getElementById('mskuld');
 
-    //Sätter en def
+    //Data visas för stockholm innan ett län har tryckts på kartan
     lanDisplay.innerHTML = "Stockholm";
     mhyraDisplay.innerHTML = data[0]["r_rent"]["Stockholms län"][4];
     mskuldDisplay.innerHTML = data[0]["d_debt"]["STOCKHOLMS LÄN"][4];
-
+    
     vnMarker.getElement().addEventListener('click', () => {
         lanDisplay.innerHTML = "Västernorrland";
         mhyraDisplay.innerHTML = data[0]["r_rent"]["Västernorrlands län"][4];
