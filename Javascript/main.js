@@ -1,3 +1,16 @@
+//////////////////////////////////////////////////////////////////////////
+//
+// filnamn: main.js
+// Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
+// Kurs : Tillämpad datateknik DT159G
+// Universitet: Mitt Universitet 
+// Beskrivning:
+// 
+// 
+//
+//
+//////////////////////////////////////////////////////////////////////////
+
 // Väntar för att DOM ska ladda
 document.addEventListener("DOMContentLoaded", function () {
   var xmlhttp = new XMLHttpRequest();
