@@ -13,7 +13,7 @@
     ////////////////////////////////////////////////////////////////////////// -->
     
 </div>
-<footer id="mainfooter"><p> Industriell Ekonomi, Mitt Universitet | Korrelationen &copy 2021 </p></footer>
+<footer id="mainfooter">Industriell Ekonomi, Mitt Universitet | Korrelationen &copy 2021</footer>
 
 </body>
 </html>
