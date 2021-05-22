@@ -13,7 +13,6 @@
 //////////////////////////////////////////////////////////////////////////
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxmcmVkayIsImEiOiJja20zamlzdjM0eTlzMm9uMWhsZjk1czhkIn0.JvbY4ViBCPSXT-8msBh7Dw';
-var data = [];
 document.addEventListener("DOMContentLoaded", function () {
 
     var xmlhttp = new XMLHttpRequest();
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 data = JSON.parse(xmlhttp.responseText);
                 mapInfo(data);
                 changeLayer();
-                console.log(data);
             }
             else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
                 alert("There was an error 400");
@@ -37,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xmlhttp.open("GET", "getComp.php", true);
     xmlhttp.send();
 });
-
+//Initierar kartan
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
