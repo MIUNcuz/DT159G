@@ -18,3 +18,4 @@
                 <li><a href="stat.php">Tabell</a></li>               
             </ul>
         </nav>
+<!-- Här stängs nav-->

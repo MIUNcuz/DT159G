@@ -17,19 +17,18 @@
 $page_title = "Karta";
  include("includes/header.php");
 include("includes/mainmenu.php");?>
-<section>
+<div>
         <div id="map">
                 <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
                 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
             <script src='Javascript/maps.js'> </script>
-        <div>
-        <div class='mapStats'>
-                <div><span id='lan'></span></div>
-                <div><strong>Årshyra:</strong> <span id='mhyra'></span><span> Kr/kvm</span></div>
-                <div><strong>Medelskuld:</strong> <span id='mskuld'></span><span> Kr/skuldsatt</span></div>
-                <div><strong>Antal skuldsatta:</strong> <span id='antSkuld'></span><span> personer</span></div>
+                <div class='mapStats'>
+                        <div><span id='lan'></span></div>
+                        <div><strong>Årshyra:</strong> <span id='mhyra'></span><span> Kr/kvm</span></div>
+                        <div><strong>Medelskuld:</strong> <span id='mskuld'></span><span> Kr/skuldsatt</span></div>
+                        <div><strong>Antal skuldsatta:</strong> <span id='antSkuld'></span><span> personer</span></div>
+                </div>
         </div>
-
         <div id="menu">
                 <!-- See a list of Mapbox-hosted public styles at -->
                 <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
@@ -45,7 +44,7 @@ include("includes/mainmenu.php");?>
                 <label for="outdoors-v11">Utomhus</label>
         </div>
 
-</section>
+</div>
 <?php include("includes/footer.php"); ?>
 
 
