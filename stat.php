@@ -18,14 +18,14 @@ include("includes/statmenu.php");?>
 <script src="Javascript/main.js"></script>
 
 
-<section id="centrum"><!--Vald region visas här --></section>
+<div id="centrum"><!--Vald region visas här --></div>
 
-<section id="leftStat"> <!-- Här visas statistik för hyran-->
-</section>
+<div id="leftStat"> <!-- Här visas statistik för hyran-->
+</div>
 
-<section id="rightStat">  <!-- Här visas statistik för skulden-->
-</section>
+<div id="rightStat">  <!-- Här visas statistik för skulden-->
+</div>
 
-<section id="bottomStat">    
-</section>
+<div id="bottomStat">    
+</div>
 <?php include("includes/footer.php"); ?>
