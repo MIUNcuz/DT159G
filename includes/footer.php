@@ -13,6 +13,6 @@
     ////////////////////////////////////////////////////////////////////////// -->
     
 <footer id="mainfooter">Industriell Ekonomi, Mitt Universitet | Korrelationen &copy; 2021</footer>
-
+</div>
 </body>
 </html>

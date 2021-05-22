@@ -16,7 +16,7 @@ $page_title = "Statistik";
 include("includes/header.php");
 include("includes/statmenu.php");?>
 <script src="Javascript/main.js"></script>
-
+<div>
 
 <div id="centrum"><!--Vald region visas här --></div>
 
