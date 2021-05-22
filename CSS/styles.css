@@ -154,7 +154,6 @@ body
   .button
   {
     background-color: #ccc; 
-    /* border: none; */
     border: 1px solid #333;
     color: black;
     padding: 4px 20px;
