@@ -126,8 +126,9 @@ function funkComp() {
             }
           }
         };
+        var config = {responsive: true}
 
-        Plotly.newPlot('bottomStat', dat, layout);
+        Plotly.newPlot('bottomStat', dat, layout, config);
 
       }
       else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
@@ -193,8 +194,9 @@ function funkSkuld() {
             }
           }
         };
+        var config = {responsive: true}
 
-        Plotly.newPlot('rightStat', dat, layout);
+        Plotly.newPlot('rightStat', dat, layout, config);
 
       }
       else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
@@ -261,8 +263,9 @@ function funkHyra() {
             }
           }
         };
+        var config = {responsive: true}
 
-        Plotly.newPlot('leftStat', dat, layout);
+        Plotly.newPlot('leftStat', dat, layout, config);
 
       }
       else if (xmlhttp.status == 400) { // Något fel uppstod => 400 Bad request.
