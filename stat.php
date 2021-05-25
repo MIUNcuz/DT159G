@@ -5,10 +5,11 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet 
+// Datum: 2021-05-25
 // Beskrivning:
 // 
-// 
-//
+// Undersida som plottar statistik, uppdelad i div:s med id:en för att
+// kunna hantera utseende av webbplatsens statistik.
 //
 //////////////////////////////////////////////////////////////////////////
 

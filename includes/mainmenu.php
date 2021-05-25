@@ -4,7 +4,7 @@
     // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
     // Kurs : Tillämpad datateknik DT159G
     // Universitet: Mitt Universitet
-    // Datum: 2021-05- 
+    // Datum: 2021-05-25 
     // Beskrivning:
     // 
     // Skapar en navigeringsbar för att kunna skifta mellan karta och statistik.

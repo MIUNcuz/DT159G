@@ -4,11 +4,12 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet
-// Datum: 2021-05- 
+// Datum: 2021-05-25 
 // Beskrivning:
 // 
+// Javascript-fil vars uppgift är att visualisera en karta på startsidan 
+// med markörer som indikerar Sveriges regioner m.h.a biblioteket Mapbox.
 // 
-//
 //
 //////////////////////////////////////////////////////////////////////////
 

@@ -3,7 +3,7 @@
 // filnamn: main.js
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
-// Datum: 2021-05-
+// Datum: 2021-05-25
 // Universitet: Mitt Universitet 
 // Beskrivning:
 // 

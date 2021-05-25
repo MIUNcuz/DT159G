@@ -5,7 +5,7 @@
 // Skrivet av: Erik Sillerström, August Jonsson, Alfred Karlsson
 // Kurs : Tillämpad datateknik DT159G
 // Universitet: Mitt Universitet
-// Datum: 2021-05- 
+// Datum: 2021-05-25 
 // Beskrivning:
 // 
 // PHP-fil som sammanställer data från scb och Kronofogden i from av de
