@@ -80,7 +80,7 @@ function putMultiArray($lArr,$meanArr){
     }
     return $plot_skuld;
 }
-
+// funktion som skapar multidimensionell array
 function putMultiArrayAnt($lArr,$ant_skuld){
     $reg = array_slice($lArr,4);
     $reg = array_unique($reg);

@@ -18,7 +18,7 @@
                 <li><a href="main.php">Karta</a></li>               
                 <li><a href="stat.php">Tabell</a></li>
                 <li><select id="regVal" class="form-control"></select></li>
-                <li><button id="searchbtn" class="button button">Välj län</button> </li>
+                <li><button id="searchbtn" class="button button">Visa Info</button> </li>
             </ul>   
         </nav>
 </div>
