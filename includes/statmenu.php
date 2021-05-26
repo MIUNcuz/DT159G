@@ -17,6 +17,7 @@
             <ul>
                 <li><a href="main.php">Karta</a></li>               
                 <li><a href="stat.php">Tabell</a></li>
+                <li><a href="info.php">Information</a></li>
                 <li><select id="regVal" class="form-control"></select></li>
                 <li><button id="searchbtn" class="button button">Visa Info</button> </li>
             </ul>   

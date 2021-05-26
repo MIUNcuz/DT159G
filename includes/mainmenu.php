@@ -16,6 +16,7 @@
             <ul>
                 <li><a href="main.php">Karta</a></li>               
                 <li><a href="stat.php">Tabell</a></li>               
+                <li><a href="info.php">Information</a></li>               
             </ul>
         </nav>
 <!-- Här stängs nav-->
