@@ -1,22 +1,23 @@
 <h2> Välkommen till Korrelationen!</h2>
-<b>Om oss</b></br>
-Skaparna av denna webbplats är 3 studenter som studerar andra året på Mitt Universitet.</br></br>
+<b>Om oss</b><br>
+Skaparna av denna webbplats är 3 studenter som studerar andra året på Mitt Universitet.<br><br>
 
 
-</br> 
-<i>Men varför kanske ni undrar?</i></br>
- </br>Syftet med denna webbplats är att kunna följa svenskafolkets skuldsättning i kombination med hur hyresavgifterna har utvecklats efter län och/eller kommun. Detta för att se om det finns något samband mellan ökande hyresavgifter och ökande skuldsättning hos privatpersoner. Samtidigt ska webbplatsen möjliggöra att enskilt kunna ta ut data för olika regioner innefattande hyresavgifter och skuldsättning. Målgruppen som denna webbplats riktar sig till är till dem som är intresserad av att ta del av information som berör skuldsättning och hyresavgifter. Detta kan exempelvis vara lokalpolitiker som vill veta hur deras region eller kommun står sig mot andra. Men även personer som letar boende och vill veta vilken region som är billigaste att bo i. Användaren i fråga ska på ett enkelt sätt kunna välja ut den regionen den vill söka information om, för att sedan direkt få upp belopp på både medelhyra och medelskuld samt korrelationen mellan dessa. Detta ska visualisreras med hjälp av en karta men även stapel och linjediagram. 
+<br> 
+<i>Men varför kanske ni undrar?</i><br>
+ <br>Syftet med denna webbplats är att kunna följa svenskafolkets skuldsättning i kombination med hur hyresavgifterna har utvecklats efter län och/eller kommun. Detta för att se om det finns något samband mellan ökande hyresavgifter och ökande skuldsättning hos privatpersoner. Samtidigt ska webbplatsen möjliggöra att enskilt kunna ta ut data för olika regioner innefattande hyresavgifter och skuldsättning. Målgruppen som denna webbplats riktar sig till är till dem som är intresserad av att ta del av information som berör skuldsättning och hyresavgifter. Detta kan exempelvis vara lokalpolitiker som vill veta hur deras region eller kommun står sig mot andra. Men även personer som letar boende och vill veta vilken region som är billigaste att bo i. Användaren i fråga ska på ett enkelt sätt kunna välja ut den regionen den vill söka information om, för att sedan direkt få upp belopp på både medelhyra och medelskuld samt korrelationen mellan dessa. Detta ska visualisreras med hjälp av en karta men även stapel och linjediagram. 
 Datat som kommer att användas finns att hämta hos kronofogden samt SCB. Den data som hämtas från Kronofogden innehåller statistik för antal privatpersoner med skulder under indrivning. Från SCB hämtas data om hyra i hyreslägenheter efter län och kommun. 
-</br>
+<br><br><br><br><br><br>
 
 
 
 
 <h2><i>Kontakt</i></h2>
-<b>Vi på Korrelationen strävar alltid efter att utveckla upplevelsen för våra användare.</b></br>
-Om du har synpunkter hur vi kan förbättra vår tjänst.</br>
-Tveka inte att höra av dig!</br>
-Du når oss på följande sätt:</br>
-Telefon: 060-XXXXXX</br>
-Mail: <a href="mailto:info@korrelationen.se"><i>Korrelationen</i></a></br></br>
+<b>Vi på Korrelationen strävar alltid efter att utveckla upplevelsen för våra användare.</b><br>
+Om du har synpunkter hur vi kan förbättra vår tjänst.<br>
+Tveka inte att höra av dig!<br>
+Du når oss på följande sätt:<br>
+Telefon: 060-XXXXXX<br>
+Mail: <a href="mailto:info@korrelationen.se"><i>Korrelationen</i></a><br><br><br>
+<img src="img/black.png"  alt="Korrelationen logotyp">
 
