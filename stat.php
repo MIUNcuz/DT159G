@@ -27,6 +27,6 @@ include("includes/statmenu.php");?>
 <div id="rightStat">  <!-- Här visas statistik för skulden-->
 </div>
 
-<div id="bottomStat">    
+<div id="bottomStat"> <!-- Här visas korrelationen mellan hyra och skuld -->    
 </div>
 <?php include("includes/footer.php"); ?>

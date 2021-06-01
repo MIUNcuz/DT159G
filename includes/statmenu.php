@@ -9,7 +9,7 @@
     // 
     // Html-kod som skapar en liknande navigeringsbar som mainmenu.php 
     // till skillnad att denna även tillhandahåller ett option element som
-    // som visar län. Samt en knapp "välj län". 
+    // som visar län. Samt en knapp "visa info". 
     //
     ////////////////////////////////////////////////////////////////////////// -->
 <div id="container">

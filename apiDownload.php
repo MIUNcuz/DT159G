@@ -62,7 +62,7 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 		
 		return $resp;
 	}
-	
+	// Skapar index för att hitta år och län
 	function findYearAndLan($yArr, $lArr, $year, $lan){
 		for( $i=0; $i<count($yArr); $i++ ){
 			if($yArr[$i] == $year and $lArr[$i] == $lan){
@@ -82,7 +82,7 @@ $url2 = "https://kronofogden.entryscape.net/rowstore/dataset/eb9eee0d-0a3a-47e4-
 		$skuldbelopp="skuldbelopp";
 		$lan = "﻿län";
 
-		
+		// Parar ihop län med tillhörande data
     	foreach ( $inData->results as $län )
 		{
 			$index = findYearAndLan($yArr, $lArr, $län->$year, $län->$lan);

@@ -7,8 +7,8 @@
     // Datum: 2021-05-25 
     // Beskrivning:
     // 
-    // Skapar en navigeringsbar för att kunna skifta mellan karta och statistik.
-    //
+    // Skapar en navigeringsbar för att kunna skifta mellan karta, statistik
+    // och information
     //
     ////////////////////////////////////////////////////////////////////////// -->
 <div id="container">

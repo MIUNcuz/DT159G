@@ -34,6 +34,7 @@ header('Content-Type: application/json');
 	$hy_regArr =array();
 	$hyra_lan = array();
 	
+	// Konverterar till PHP objekt
 	$dataIn = json_decode($response_hyra, true);
 
 
@@ -70,7 +71,7 @@ header('Content-Type: application/json');
 
 
 
-
+	// Gör om till JSON format
 	$ut_rent = SkapaJson($plot_hyra, $hy_yearArr, $hy_regArr,"bar");
 	echo "{$ut_rent}";
 	$rent_arr = twoDimArr($plot_hyra, $hy_yearArr);

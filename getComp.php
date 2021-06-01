@@ -8,7 +8,7 @@
 // Datum: 2021-05-25 
 // Beskrivning:
 // 
-// PHP-fil som sammanställer data från scb och Kronofogden i from av de
+// PHP-fil som sammanställer data från scb och Kronofogden i form av de
 // textfiler som skapats. För att till sist skapa kombinerad datafil som
 // nyttjas för att kuna visa information på webbplatsens karta. 
 //

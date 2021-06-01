@@ -18,7 +18,7 @@ $page_title = "Karta";
  include("includes/header.php");
 include("includes/mainmenu.php");?>
 <div>
-        <div id="map">
+        <div id="map">   <!--Div för kartan-->
                 <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
                 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
             <script src='Javascript/maps.js'> </script>
@@ -29,7 +29,8 @@ include("includes/mainmenu.php");?>
                         <div><strong>Antal skuldsatta:</strong> <span id='antSkuld'></span><span> personer</span></div>
                 </div>
         </div>
-        <div id="menu">
+        <div id="menu">  <!--Div för att byta layout på kartan-->
+                <!--Kod hämtad från mapbox-->
                 <!-- See a list of Mapbox-hosted public styles at -->
                 <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
                 <input id="light-v10" type="radio" name="rtoggle" value="light" checked="checked">

@@ -70,7 +70,7 @@ function createDiv() {
     }
     return markers;
 }
-
+// Markörer med koordinater för Svergies regioner.
 el1 = createDiv()
 
 var vnMarker = new mapboxgl.Marker(el1[0])
